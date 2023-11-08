@@ -42,9 +42,11 @@ components:
         description:
           type: string
           description: the description of the product
-        category:
-          $ref: '#/components/schemas/Category'
-          description: the category of the product
+        categories:
+          type: array
+          items:
+            $ref: "#/components/schemas/Category"
+          description: array of product categories
         image:
           type: string
           description: the url of the product image
@@ -126,9 +128,14 @@ components:
         purchasedAt:
           type: number
           description: the date and time of purchase
-        productId:
-          type: string
-          description: the id of the purchased product
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product"'
+          description: array of the purchased products
+        totalPrice:
+          type: number
+          description: the total price of the purchases
 
       example:
         id: 1
@@ -157,8 +164,8 @@ paths:
           schema:
             type: string
             enum:
-              - 'asc'
-              - 'desc'
+              - "asc"
+              - "desc"
           required: false
 
       responses:
