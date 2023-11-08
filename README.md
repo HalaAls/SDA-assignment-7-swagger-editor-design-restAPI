@@ -15,7 +15,7 @@ In this level, the following tasks need to be completed:
 
 In addition to the basic requirements, the following tasks should be implemented:
 - [x] Define the relations among the models to establish the necessary connections.
-- [ ] Design endpoints for user authentication, including login, register, and logout functionality.
+- [x] Design endpoints for user authentication, including login, register, and logout functionality.
 - [x] Design endpoints for searching products by name.
 - [x] Design endpoints for pagination and sorting to efficiently retrieve data.
 

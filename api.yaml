@@ -114,10 +114,6 @@ components:
 
     Order:
       type: object
-      required:
-        - userId
-        - purchasedAt
-        - productId
       properties:
         id:
           type: string
@@ -126,7 +122,7 @@ components:
           type: string
           description: the id of the user how ordered the product
         purchasedAt:
-          type: number
+          type: string
           description: the date and time of purchase
         products:
           type: array
@@ -412,6 +408,40 @@ paths:
                   $ref: "#/components/schemas/User"
         500:
           description: server error
+  /users/login:
+    post:
+      tags:
+        - users
+      summary: user login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        200:
+          description: user is authenticated successfully
+        401:
+          description: user login is unauthorized
+        500:
+          description: server error
+  
+  /users/logout:
+    post:
+      tags:
+        - users
+      summary: user logout
+      responses:
+        200:
+          description: user is logged out successfully
+        500:
+          description: server error
+  
 
   /categories:
     get:
